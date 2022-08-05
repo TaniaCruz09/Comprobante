@@ -69,7 +69,9 @@ class Journal {
 
   //Creando la funcion deleteLine la cual se encargara de eliminar la linea que le pasemos como parametro
   deleteLine(cont: number): JournalLine[] {
-    const newArray = this.lines.map((value: JournalLine) => value);
+    const newArray = this.lines.map(
+      (value: JournalLine, index: number) => value
+    );
 
     if (cont === 1) {
       newArray.splice(0, 1);
@@ -83,6 +85,14 @@ class Journal {
 
     return newArray;
   }
+
+  //   deleteLine2(cont: number): JournalLine[] {
+  //     const array = this.lines.map((value: JournalLine) => value);
+
+  //     const newArray = array.slice(cont);
+
+  //     return newArray;
+  //   }
 }
 
 export { Journal };
